@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<title>sample</title>
+</head>
+<body>
+<button id="do">GET</button>
+<button id="clear">CLEAR</button>
+<div id="results"></div>
+<script src="http://zeptojs.com/zepto.min.js"></script>
+<script>
+var DO=(function(module)
+         {
+           module.GET=function(resultObject)
+                       {
+                         resultObject.prepend(Date() + "<br>");
+                          };
+     return module;
+}(DO || {}));
+</script>
+<script>
+$("#do").click(function()
+             {
+              DO.GET($("#results"));});
+$("#clear").click(function()
+                   {
+                    $("#results").html("");});
+</script> 
+</body>
+</html>
